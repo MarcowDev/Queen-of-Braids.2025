@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos</title>
+    <link rel="stylesheet" href="css/agendamentos.css">
+</head>
+
+<body>
+    <div class=""agendamentos">
+    <h1>Agendamentos</h1>
+    
+    <form id="agendamentos-form">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required>
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required>
+        <label for="horario">Horário:</label>
+        <input type="time" id="horario" name="horario" required>
+        <select id="servico" name="servico" required>
+            <option value="">Selecione um serviço</option>
+            <option value="trança">Trança nagô</option>
+            <option value="trança">Trança box-Braids</option>
+            <option value="trança">Twist</option>
+            <option value="trança">Boho Curl</option>
+            <option value="Cabelo organico">Entrelace</option>
+            <option value="Cabelo Natural">Aplicação de Mega Hair</option>
+            <!-- Adicione mais serviços aqui -->
+             </select>
+        <label for="observacoes">Observações:</label>
+        <textarea id="observacoes" name="observacoes"></textarea>
+            <button type="submit">Agendar</button>
+            <img src="Agendamentos.jpg" alt="Foto de perfil da Queen of Braids">
+    </form>
+  </div>
+  <footer>
+    <p>&copy; 2025 Queen of Braids. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qeen of braids</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Agendamentos</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+        
+        <img src="Queen_logo.png" alt="Foto de perfil da Queen of Braids">
+    </header>
+    <section class="hero">
+        <h1>Bem-vindos ao Queen of Braids</h1>
+         <p>"Uma nova versão a um toque de distancia"</p>
+        <button id="agende-seu-horario">Agende seu Horário</button>
+    </section>
+    <section class="sobre">
+        <h2>Sobre a Queen of braids</h2>
+        <p>A Queen of Braids e uma marca de beleza que oferece serviços inovadores, e tranças de qualidade, que renovam a autoestima dos seus clientes.</p>
+    </section>
+    <section class="Valores">
+        <h2>Valores e filosofia da Queen of braids</h2>
+          <ul>
+            <li>Qualidade</li>
+            <li>Excelencia</li>
+            <li>inovação</li>
+          </ul>
+        <p>Queen of Braids é uma marca que proporciona qualidade, excelencia e inovação aos seus clientes, além de profissionalismo nos atendimentos, com uma ficha de Anamnese antes de cada atendimento, que nos permite entender melhor os nossos clientes.</p>
+        <p>Filosofia da Queen of braids: Ser uma marca que proporciona qualidade, excelencia e inovação aos seus clientes.</p>
+        <p>Ideias inovadoras: Serviços como Tranças que possam transformar o sua autoestima.</p>
+        <p>Ideias mercearias: Produtos de qualidade que ajuda no cuidado do seu cabelo.</p>
+        <p>Ideia final: Ser o salão de beleza que proporciona qualidade, excelencia e inovação aos seus clientes.</p>
+    </section>
+    <section class="Contato">
+        <h2>Contato</h2>
+        <p>Clique aqui para saber mais sobre nossos serviços.</p>
+        <button id="preencher-anamnese">Preencher a anamnese</button>
+    </section>
+    <footer>
+        <p>&copy; 2025 Queen of Braids. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        const agendeSeuHorarioButton = document.getElementById('agende-seu-horario');
+        const preencherAnamneseButton = document.getElementById('preencher-anamnese');
+
+        agendeSeuHorarioButton.addEventListener('click', () => {
+            window.location.href = 'agendamentos.html';
+        });
+
+        preencherAnamneseButton.addEventListener('click', () => {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+
+            // envia as informações para o servidor aqui
+            fetch('/agendamentos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nome,
+                    email,
+                    telefone
+                })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+        });
+    </script>
+</body>
+</html>
